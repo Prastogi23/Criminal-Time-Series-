@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Crime Rate Prediction - Security</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+
+    <!-- Favicon -->
+    <link href={{ url_for('static', filename='assets/img/favicon.ico') }} rel="icon">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+    <!-- Flaticon Font -->
+    <link href={{ url_for('static', filename='assets/lib/flaticon/font/flaticon.css') }} rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href={{ url_for('static', filename='assets/lib/owlcarousel/assets/owl.carousel.min.css') }}rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href={{ url_for('static', filename='assets/css/style.css') }} rel="stylesheet">
+
+    <style>
+        .bnav{
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+   
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0 nav-bar">
+        <!-- Navbar Section -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <!-- Brand Name (Visible for All Screen Sizes) -->
+            <a href="/" class="navbar-brand">
+                <h1 class="m-0 text-capitalize font-italic text-white">
+                    <span class="text-primary">Crime Rate</span> Prediction
+                </h1>
+            </a>
+    
+            <!-- Toggler Button -->
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Collapsible Navbar -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/predict" class="nav-link">Predict</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    
+    
+    <!-- Navbar End -->
+
+<!-- Carousel Start -->
+<div class="container-fluid p-0">
+    <div id="blog-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner" style="background-color: #000;">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <img class="w-100" src="{{ url_for('static', filename='assets/img/crime1.jpg') }}" alt="Safety First">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <h4 class="text-dark m-0">Predicting Tomorrow, Securing Today</h4>
+                    <h4 class="display-4 m-0 mt-2 mt-md-3 text-white">Crime Behaviour Analysis</h4>
+                    <a href="/insights" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Explore Insights</a>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <img class="w-100" src="{{ url_for('static', filename='assets/img/crime2.jpg') }}" alt="Efficient Models">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <h4 class="text-dark m-0">Data-Driven Security</h4>
+                    <h4 class="display-4 m-0 mt-2 mt-md-3 text-white">Efficient Prediction Models</h4>
+                    <a href="/predict" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Try Prediction</a>
+                </div>
+            </div>
+        </div>
+        <!-- Controls -->
+        <a class="carousel-control-prev" href="#blog-carousel" data-bs-slide="prev">
+            <div class="btn btn-primary rounded-circle" style="width: 45px; height: 45px;">
+                <span class="carousel-control-prev-icon mb-n2"></span>
+            </div>
+        </a>
+        <a class="carousel-control-next" href="#blog-carousel" data-bs-slide="next">
+            <div class="btn btn-primary rounded-circle" style="width: 45px; height: 45px;">
+                <span class="carousel-control-next-icon mb-n2"></span>
+            </div>
+        </a>
+    </div>
+</div>
+<!-- Carousel End -->
+
+
+
+    <!-- Features Start -->
+    <!-- <div class="container-fluid py-5 py-lg-0 feature">
+        <div class="row py-5 py-lg-0">
+            <div class="col-lg-4 p-0">
+                <div class="feature-item d-flex align-items-center border-right px-5 mb-4 mb-lg-0">
+                    <i class="flaticon-policeman display-3 text-primary mr-4"></i>
+                    <div class="">
+                        <h5 class="mb-3">Professional System</h5>
+                        <p class="m-0">Perfect system for Professional system
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 p-0">
+                <div class="feature-item d-flex align-items-center border-right px-5 mb-4 mb-lg-0">
+                    <i class="flaticon-helmet display-3 text-primary mr-4"></i>
+                    <div class="">
+                        <h5 class="mb-3">Latest Technology</h5>
+                        <p class="m-0">Spam Detection System employs cutting-edge technology, utilizing the Multinomial Naive Bayes Algorithm for 99.67% accurate email spam detection in real-time communication
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 p-0">
+                <div class="feature-item d-flex align-items-center px-5">
+                    <i class="flaticon-surveillance display-3 text-primary mr-4"></i>
+                    <div class="">
+                        <h5 class="mb-3">24/7 Support</h5>
+                        <p class="m-0">Empower your email protection 24x7 with Spam Detection System, ensuring constant vigilance against spam, guaranteeing a 99.67% accuracy for uninterrupted communication
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="container-fluid py-5 py-lg-0 feature">
+        <div class="row py-5 py-lg-0">
+            <div class="col-lg-4 p-0">
+                <div class="feature-item d-flex align-items-center border-right px-5 mb-4 mb-lg-0">
+                    <i class="flaticon-policeman display-3 text-primary mr-4"></i>
+                    <div class="">
+                        <h5 class="mb-3">Professional Insights</h5>
+                        <p class="m-0">Providing accurate and reliable analysis to help understand crime patterns and behaviors.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 p-0">
+                <div class="feature-item d-flex align-items-center border-right px-5 mb-4 mb-lg-0">
+                    <i class="fa fa-database display-3 text-primary mr-4"></i>
+                    <div class="">
+                        <h5 class="mb-3">Data-Driven Predictions</h5>
+                        <p class="m-0">Our system leverages past crime data to predict future trends and improve public safety.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 p-0">
+                <div class="feature-item d-flex align-items-center px-5">
+                    <i class="fa fa-globe display-3 text-primary mr-4"></i>
+                    <div class="">
+                        <h5 class="mb-3">24/7 Access</h5>
+                        <p class="m-0">Access the system anytime to gain insights and make informed decisions for a safer environment.</p>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+    
+    <!-- Features End -->
+
+    <!-- Facts Start -->
+    <div class="container-fluid bg-primary my-5 py-5 text-center">
+        <div class="row pt-5 align-items-center justify-content-center">
+            <!-- High Accuracy -->
+            <div class="col-lg-3 col-sm-6 mb-5">
+                <h5 class="fa fa-trophy mb-4 d-inline-flex align-items-center justify-content-center border rounded-circle text-white" style="width: 50px; height: 50px;"></h5>
+                <h4 class="display-4 text-white mb-3" data-toggle="counter-up">99.7</h4>
+                <h6 class="text-white m-0">High Accuracy</h6>
+            </div>
+            <!-- Security Models -->
+            <div class="col-lg-3 col-sm-6 mb-5">
+                <h5 class="fa fa-shield mb-4 d-inline-flex align-items-center justify-content-center border rounded-circle text-white" style="width: 50px; height: 50px;"></h5>
+                <h4 class="display-4 text-white mb-3" data-toggle="counter-up">6</h4>
+                <h6 class="text-white m-0">Security Models</h6>
+            </div>
+            <!-- Data Coverage -->
+            <div class="col-lg-3 col-sm-6 mb-5">
+                <h5 class="fa fa-line-chart mb-4 d-inline-flex align-items-center justify-content-center border rounded-circle text-white" style="width: 50px; height: 50px;"></h5>
+                <h4 class="display-4 text-white mb-3" data-toggle="counter-up">4</h4>
+                <h6 class="text-white m-0">Years of Data</h6>
+            </div>
+            <!-- Community Safety -->
+            <div class="col-lg-3 col-sm-6 mb-5">
+                <h5 class="fa fa-users mb-4 d-inline-flex align-items-center justify-content-center border rounded-circle text-white" style="width: 50px; height: 50px;"></h5>
+                <h4 class="display-4 text-white mb-3" data-toggle="counter-up">90%</h4>
+                <h6 class="text-white m-0">Community Safety Impact</h6>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Facts End -->
+
+
+    <!-- Features Start -->
+<!-- Features Start -->
+<div class="container pt-5">
+    <div class="row">
+        <!-- Left Image Section -->
+        <div class="col-lg-5 mb-5">
+            <h5 class="text-primary mb-3">Why Choose Us?</h5>
+            <div class="col-lg-12 px-0">
+                <img width="100%" class="img-fluid" src="{{ url_for('static', filename='assets/img/crime3.png') }}" alt="Crime Analysis">
+                <span class="d-block mt-3" style="font-size: 18px; font-weight: 500; color: #555;">
+                    <br>
+                    Geographic Distribution of Crime in Los Angeles
+                </span>
+            </div>
+        </div>
+        
+        <!-- Right Features Section -->
+        <div class="col-lg-7">
+            <div class="row">
+                <!-- Feature 1 -->
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <h3 class="fa fa-line-chart font-weight-normal d-flex flex-shrink-0 align-items-center justify-content-center bg-primary text-white m-0 mr-3" style="width: 45px; height: 45px;"></h3>
+                            <h6 class="text-truncate m-0">High Prediction Accuracy</h6>
+                        </div>
+                        <p>Our system achieves a remarkable 99.7% accuracy in predicting crime trends, helping law enforcement stay ahead of potential threats.</p>
+                    </div>
+                </div>
+                <!-- Feature 2 -->
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <h3 class="fa fa-bar-chart font-weight-normal d-flex flex-shrink-0 align-items-center justify-content-center bg-primary text-white m-0 mr-3" style="width: 45px; height: 45px;"></h3>
+                            <h6 class="text-truncate m-0">Comprehensive Data Analysis</h6>
+                        </div>
+                        <p>We analyze four years of historical crime data to provide actionable insights and enhance decision-making capabilities.</p>
+                    </div>
+                </div>
+                <!-- Feature 3 -->
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <h3 class="fa fa-gears font-weight-normal d-flex flex-shrink-0 align-items-center justify-content-center bg-primary text-white m-0 mr-3" style="width: 45px; height: 45px;"></h3>
+                            <h6 class="text-truncate m-0">Advanced AI Models</h6>
+                        </div>
+                        <p>Our platform leverages cutting-edge AI models like Random Forest, XGBoost, and Gradient Boosting for accurate predictions.</p>
+                    </div>
+                </div>
+                <!-- Feature 4 -->
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <h3 class="fa fa-shield font-weight-normal d-flex flex-shrink-0 align-items-center justify-content-center bg-primary text-white m-0 mr-3" style="width: 45px; height: 45px;"></h3>
+                            <h6 class="text-truncate m-0">Enhanced Community Safety</h6>
+                        </div>
+                        <p>Empowering communities with predictive insights to prevent crimes and foster a safer environment for everyone.</p>
+                    </div>
+                </div>
+                <!-- Feature 5 -->
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <h3 class="fa fa-clock-o font-weight-normal d-flex flex-shrink-0 align-items-center justify-content-center bg-primary text-white m-0 mr-3" style="width: 45px; height: 45px;"></h3>
+                            <h6 class="text-truncate m-0">Timely Data Insights</h6>
+                        </div>
+                        <p>Receive actionable updates based on the latest analyzed data to respond effectively to trends.</p>
+                    </div>
+                </div>
+                <!-- Feature 6 -->
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <h3 class="fa fa-support font-weight-normal d-flex flex-shrink-0 align-items-center justify-content-center bg-primary text-white m-0 mr-3" style="width: 45px; height: 45px;"></h3>
+                            <h6 class="text-truncate m-0">24/7 Support</h6>
+                        </div>
+                        <p>We provide round-the-clock support to ensure seamless integration and usage of the crime prediction platform.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features End -->
+<!-- Footer Start -->
+<div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
+    <div class="row pt-5">
+        <div class="col-lg-4 col-md-12 mb-5">
+            <h1 class="mb-3 display-5 text-capitalize font-italic text-white"><span class="text-primary">Crime</span> Analysis</h1>
+            <p class="m-0">Empowering communities with data-driven insights to enhance safety and predict crime trends.</p>
+        </div>
+        <div class="col-lg-8 col-md-12">
+            <div class="row">
+                <div class="col-md-4 mb-5">
+                    <h5 class="text-primary mb-4">Quick Links</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-white mb-2" href="/"><i class="fa fa-angle-right mr-2"></i>Home Page</a>
+                        <a class="text-white mb-2" href="/predict"><i class="fa fa-angle-right mr-2"></i>Crime Prediction</a>
+                        <a class="text-white mb-2" href="/about"><i class="fa fa-angle-right mr-2"></i>About the Project</a>
+                        <a class="text-white" href="/contact"><i class="fa fa-angle-right mr-2"></i>Contact Information</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-5">
+                    <h5 class="text-primary mb-4">Get In Touch</h5>
+                    <p><i class="fa fa-map-marker-alt mr-2"></i>Crime Analysis Team, MIET, Meerut</p>
+                    <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
+                    <p><i class="fa fa-envelope mr-2"></i>info@miet.ac.in</p>
+                    <div class="d-flex justify-content-start mt-4">
+                        <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;" href="#"><i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;" href="#"><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;" href="#"><i class="fa fa-linkedin"></i></a>
+                        <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;" href="#"><i class="fa fa-instagram"></i></a>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+            <p class="m-0 text-white">
+                &copy; <a class="text-white font-weight-bold" href="#">Crime Analysis</a>. All Rights Reserved. 
+            </p>
+        </div>
+        <div class="col-md-6 text-center text-md-right">
+            <ul class="nav d-inline-flex">
+                <li class="nav-item">
+                    <a class="nav-link text-white py-0" href="#">Privacy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white py-0" href="#">Terms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white py-0" href="#">FAQs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white py-0" href="#">Help</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-secondary border back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src={{ url_for('static', filename='assets/lib/easing/easing.min.js')}}></script>
+    <script src={{ url_for('static', filename='assets/lib/waypoints/waypoints.min.js')}}></script>
+    <script src={{ url_for('static', filename='assets/lib/counterup/counterup.min.js')}}></script>
+    <script src={{ url_for('static', filename='assets/lib/owlcarousel/owl.carousel.min.js')}}></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src={{ url_for('static', filename='assets/mail/jqBootstrapValidation.min.js')}}></script>
+    <script src={{ url_for('static', filename='assets/mail/contact.js')}}></script>
+
+    <!-- Template Javascript -->
+    <script src={{ url_for('static', filename='assets/js/main.js')}}></script>
+</body>
+
+</html>
